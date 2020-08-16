@@ -1,0 +1,30 @@
+<table class="table is-striped">
+  <thead>
+    <th><%= attr_name(@publishers, :id) %></th>
+    <th><%= attr_name(@publishers, :title) %></th>
+    <th><%= attr_name(@publishers, :country) %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @publishers.each do |publisher| %>
+      <tr>
+        <td><%= publisher.id %></td>
+        <td><%= publisher.title %></td>
+        <td><%= publisher.country %></td>
+        <td>
+          <%= link_to t('admin.common.show'), admin_publisher_path(publisher.id), class: "button is-primary" %>
+        </td>
+        <td>
+          <%= link_to t('admin.common.edit'), edit_admin_publisher_path(publisher.id), class: "button is-warning"%>
+        </td>
+        <td>
+          <%= link_to t('admin.common.delete'), admin_publisher_path(publisher.id), method: :delete, class: "button is-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @publishers %>

@@ -1,0 +1,8 @@
+<div class="container">
+  <h3 class="title is-3"><%= obj_name(@publishers) %></h3>
+  <div class="column is-12">
+    <%= link_to t('admin.publishers.add'), new_admin_publisher_path, class: "button is-primary" %>
+  </div>
+  
+  <%= render partial: "table" %>
+</div>

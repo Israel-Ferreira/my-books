@@ -1,14 +1,5 @@
 <%= form_with model: [:admin, @author], local: true do |f| %>
-  <% if @author.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@author.errors.count, "error") %></h2>
-      <ul>
-        <% @author.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "shared/errors", locals: {resource: @author} %>
   <div class="field">
     <%= f.label :author_name, class: "label" %>
     <div class="control">

@@ -14,13 +14,13 @@
         <td><%= author.author_name %></td>
         <td><%= author.country %></td>
         <td>
-          <%= link_to t('admin.authors.show'), admin_author_path(author.id), class: "button is-primary" %>
+          <%= link_to t('admin.common.show'), admin_author_path(author.id), class: "button is-primary" %>
         </td>
         <td>
-          <%= link_to t('admin.authors.edit'), edit_admin_author_path(author.id), class: "button is-warning"%>
+          <%= link_to t('admin.common.edit'), edit_admin_author_path(author.id), class: "button is-warning"%>
         </td>
         <td>
-          <%= link_to t('admin.authors.delete'), admin_author_path(author.id), method: :delete, class: "button is-danger" %>
+          <%= link_to t('admin.common.delete'), admin_author_path(author.id), method: :delete, class: "button is-danger" %>
         </td>
       </tr>
     <% end %>

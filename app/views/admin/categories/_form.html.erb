@@ -1,0 +1,24 @@
+<%= form_with model: [:admin, @category], local: true do |f| %>
+  <%= render partial: "admin/shared/errors", locals: {resource: @category} %>
+
+  <div class="field">
+    <%= f.label :title, class: "label" %>
+    <div class="control">
+      <%= f.text_field :title, class: "input" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "label" %>
+    <div class="control">
+      <%= f.text_field :description, class: "input" %>
+    </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <%= f.submit 'Criar', class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Voltar', admin_categories_path, class: 'button is-link is-light' %>
+    </div>
+  </div>
+<% end %>

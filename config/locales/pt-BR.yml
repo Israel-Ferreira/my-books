@@ -1,10 +1,17 @@
 pt-BR:
   admin:
-    authors:
-      add: "Adicionar autor"
+    common: 
       show: "Ver"
       delete: "Apagar"
       edit: "Editar"
+    authors:
+      add: "Adicionar autor"
     categories:
       add: "Adicionar categoria"
-      
+      edit: "Editar categoria"
+      new: "Nova categoria"
+      show: "Detalhes de %{category_name}"
+    publishers: 
+      add: "Adicionar editora"
+      edit: "Editar editora"
+      new: "Nova editora"

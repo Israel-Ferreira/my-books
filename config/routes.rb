@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'home/index'
     resources :authors
     resources :categories
+    resources :publishers
   end
 
   root to: 'home#index'
