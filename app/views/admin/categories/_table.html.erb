@@ -1,0 +1,24 @@
+<table class="table is-striped">
+  <thead>
+    <th><%= attr_name(@categories, :id) %></th>
+    <th><%= attr_name(@categories, :title) %></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.id %></td>
+        <td><%= category.title %></td>
+        <td>
+          <%= link_to t('admin.categories.show'), admin_category_path(category.id), class: "button is-primary" %>
+        </td>
+        <td>
+          <%= link_to t('admin.categories.delete'), admin_category_path(category.id), method: :delete, class: "button is-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @categories %>

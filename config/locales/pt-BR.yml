@@ -4,4 +4,7 @@ pt-BR:
       add: "Adicionar autor"
       show: "Ver"
       delete: "Apagar"
+      edit: "Editar"
+    categories:
+      add: "Adicionar categoria"
       

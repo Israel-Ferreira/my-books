@@ -3,19 +3,19 @@ pt-BR:
     models:
       user:
         one: "Usuário"
-        others: "Usuários"
+        other: "Usuários"
       publisher:
         one: "Editora"
-        others: "Editoras"
+        other: "Editoras"
       book:
         one: "Livro"
-        others: "Livros"
+        other: "Livros"
       author: 
         one: "Autor"
-        others: "Autores"
+        other: "Autores"
       category:
         one: "Categoria"
-        others: "Categorias"
+        other: "Categorias"
     attributes:
       common: &common
         created_at: "Criado em"

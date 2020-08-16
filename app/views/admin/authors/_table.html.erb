@@ -5,6 +5,7 @@
     <th><%= attr_name(@authors, :country) %></th>
     <th></th>
     <th></th>
+    <th></th>
   </thead>
   <tbody>
     <% @authors.each do |author| %>
@@ -14,6 +15,9 @@
         <td><%= author.country %></td>
         <td>
           <%= link_to t('admin.authors.show'), admin_author_path(author.id), class: "button is-primary" %>
+        </td>
+        <td>
+          <%= link_to t('admin.authors.edit'), edit_admin_author_path(author.id), class: "button is-warning"%>
         </td>
         <td>
           <%= link_to t('admin.authors.delete'), admin_author_path(author.id), method: :delete, class: "button is-danger" %>

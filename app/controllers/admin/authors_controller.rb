@@ -17,7 +17,7 @@ class Admin::AuthorsController < AdminController
 
   def update
     if @author.update(author_params)
-      redirect_to admin_authors, notice: 'Autor Atualizado com Sucesso'
+      redirect_to admin_author_path(@author.id), notice: 'Autor Atualizado com Sucesso'
     else
       render :edit
     end
@@ -27,9 +27,18 @@ class Admin::AuthorsController < AdminController
     @author = Author.new(author_params)
 
     if @author.save!
-      redirect_to admin_authors
+      redirect_to admin_authors_path
     else
       render :new
+    end
+  end
+
+  def destroy 
+    if @author.destroy!
+      redirect_to admin_authors_path
+    else
+      flash[:error] = @author.errors.full_messages.to_sentence
+      render :index
     end
   end
 

@@ -6,4 +6,8 @@ module ApplicationHelper
       object.class.human_attribute_name(attribute)
     end
   end
+
+  def obj_name(obj)
+    obj.model_name.human(count: obj.count)
+  end
 end

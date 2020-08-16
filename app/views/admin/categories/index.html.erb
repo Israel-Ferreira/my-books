@@ -1,0 +1,8 @@
+<div class="container">
+  <h3 class="title is-3"><%= obj_name(@categories) %></h3>
+  <div class="column is-12">
+    <%= link_to t('admin.categories.add'), new_admin_category_path, class: "button is-primary" %>
+  </div>
+  
+  <%= render partial: "table" %>
+</div>

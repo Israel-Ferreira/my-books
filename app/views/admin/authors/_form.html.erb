@@ -1,0 +1,37 @@
+<%= form_with model: [:admin, @author], local: true do |f| %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %></h2>
+      <ul>
+        <% @author.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :author_name, class: "label" %>
+    <div class="control">
+      <%= f.text_field :author_name, class: "input" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :country, class: "label" %>
+    <div class="control">
+      <%= f.text_field :country, class: "input" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :biography, class: "label" %>
+    <%= f.rich_text_area :biography %>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= f.submit 'Criar', class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= link_to 'Voltar', admin_authors_path, class: 'button is-link is-light' %>
+    </div>
+  </div>
+<% end %>
