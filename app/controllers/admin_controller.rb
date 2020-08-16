@@ -2,12 +2,12 @@
 
 class AdminController < ApplicationController
   before_action :authenticate_admin!
-  
+
+  layout 'admin'
+
   def authenticate_admin!
     authenticate_user!
 
-    unless current_user.admin?
-      redirect_to root_path, notice: 'Você não pode acessar essa área'
-    end
+    redirect_to root_path, notice: 'Você não pode acessar essa área' unless current_user.admin?
   end
 end
