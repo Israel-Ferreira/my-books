@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    authors:
+      add: "Adicionar autor"
+      show: "Ver"
+      delete: "Apagar"
+      

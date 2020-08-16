@@ -7,14 +7,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin' %>
   </head>
 
   <body>
-    <nav class="navbar is-white">
+    <nav class="navbar is-dark">
       <div class="container">
         <div class="navbar-brand">
-          <%= link_to "Some Page", admin_home_index_path, class: "navbar-item brand-text" %>
-          
+          <%= link_to "MyBooks", admin_home_index_path, class: "navbar-item brand-text" %>
+
           <div class="navbar-burger burger" data-target="navMenu">
             <span></span>
             <span></span>
@@ -38,14 +39,32 @@
             </a>
           </div>
         </div>
+        <div class="navbar-end">
+          <% if user_signed_in? %>
+            <div class="navbar-item">
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-danger" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </nav>
     <div class="container">
-      <div class="column is-3">
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="menu is-hidden-mobile">
+            <p class="menu-label">Geral</p>
+            <ul class="menu-list">
+              <li>
+                <%= link_to "Autores", admin_authors_path %>
+              </li>
+            </ul>
+          </aside>
+        </div>
+        <div class="column is-9">
+          <%= yield %>
+        </div>
       </div>
-      <div class="column is-9">
 
-      </div>
     </div>
 
   </body>

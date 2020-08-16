@@ -1,0 +1,52 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        others: "Usuários"
+      publisher:
+        one: "Editora"
+        others: "Editoras"
+      book:
+        one: "Livro"
+        others: "Livros"
+      author: 
+        one: "Autor"
+        others: "Autores"
+      category:
+        one: "Categoria"
+        others: "Categorias"
+    attributes:
+      common: &common
+        created_at: "Criado em"
+        update_at: "Atualizado em"
+      user: 
+        full_name: "Nome Completo"
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmação de Senha"
+        <<: *common
+      author:
+        author_name: "Nome do Autor"
+        country: "País"
+        biography: "Biografia"
+        <<: *common
+      publisher:
+        title: "Nome"
+        country: "País"
+        description: "Descrição"
+        <<: *common
+      category:
+        title: "Título"
+        description: "Descrição"
+        <<: *common
+      book: 
+        title: "Título"
+        description: "Descrição"
+        isbn: "ISBN"
+        launch_year: "Ano de lançamento"
+        author: "Autor"
+        category: "Categoria"
+        publisher: "Editora"
+        <<: *common
+
