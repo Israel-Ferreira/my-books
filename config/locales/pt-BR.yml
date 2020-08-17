@@ -15,3 +15,7 @@ pt-BR:
       add: "Adicionar editora"
       edit: "Editar editora"
       new: "Nova editora"
+    books:
+      add: "Adicionar livro"
+      edit: "Editar livro"
+      new: "Novo Livro"

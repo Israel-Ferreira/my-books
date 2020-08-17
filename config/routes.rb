@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :admin do
     get 'home/index'
-    resources :authors
-    resources :categories
-    resources :publishers
+    resources :authors, :categories, :publishers
+    resources :books
   end
 
   root to: 'home#index'

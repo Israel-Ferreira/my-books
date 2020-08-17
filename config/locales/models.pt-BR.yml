@@ -48,5 +48,6 @@ pt-BR:
         author: "Autor"
         category: "Categoria"
         publisher: "Editora"
+        images: "Imagens"
         <<: *common
 

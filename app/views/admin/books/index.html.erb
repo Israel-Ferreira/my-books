@@ -1,0 +1,24 @@
+<div class="container">
+  <h3 class="title is-3"><%= obj_name(@books) %></h3>
+
+  <div class="column is-12">
+    <%= link_to t('admin.books.add'), new_admin_book_path, class: "button is-primary" %>
+  </div>
+
+  <div class="columns">
+    <% @books.each do |book| %>
+      <div class="column is-4">
+        <figure class="image is-square">
+          <%= image_tag book.images.last %>
+        </figure>
+        <h4 class="title is-4"><%= book.title %></h4>
+        <div class="is-grouped is-centered">
+          <%= link_to t('admin.common.show'), admin_book_path(book.id), class: "button is-primary" %>
+          <%= link_to t('admin.common.edit'), edit_admin_book_path(book.id), class: "button is-warning" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%=  paginate @books %>
