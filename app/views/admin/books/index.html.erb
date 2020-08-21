@@ -5,13 +5,13 @@
     <%= link_to t('admin.books.add'), new_admin_book_path, class: "button is-primary" %>
   </div>
 
-  <div class="columns">
+  <div class="columns is-multiline is-mobile">
     <% @books.each do |book| %>
-      <div class="column is-4">
+      <div class="column is-full-mobile is-one-third-desktop">
         <figure class="image is-square">
           <%= image_tag book.images.last %>
         </figure>
-        <h4 class="title is-4"><%= book.title %></h4>
+        <h4 class="subtitle is-4"><%= book.title %></h4>
         <div class="is-grouped is-centered">
           <%= link_to t('admin.common.show'), admin_book_path(book.id), class: "button is-primary" %>
           <%= link_to t('admin.common.edit'), edit_admin_book_path(book.id), class: "button is-warning" %>

@@ -1,0 +1,42 @@
+<%= form_with model: [:admin, @user], local: true do |f| %>
+  <%= render "users/shared/error_messages", resource: @user %>
+
+  <div class="field">
+    <%= f.label :full_name, class: "label" %>
+    <div class="control">
+      <%= f.text_field :full_name, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, class: "label" %>
+    <div class="control">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "label" %>
+    <div class="control">
+      <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "label" %>
+    <div class="control">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <%= f.check_box :admin %>
+    <%= f.label :admin, class: "checkbox"%>
+  </div>
+
+  <div class="field is-grouped">
+    <%= f.submit "Criar", class: "button is-link" %>
+    <%= link_to "Voltar", admin_users_path , class: 'button is-link is-light' %> 
+  </div>
+<% end %>

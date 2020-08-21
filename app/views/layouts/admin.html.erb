@@ -25,18 +25,6 @@
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-start">
             <%= link_to "Autores", admin_authors_path, class: "navbar-item" %>
-            <a class="navbar-item" href="admin.html">
-              Orders
-            </a>
-            <a class="navbar-item" href="admin.html">
-              Payments
-            </a>
-            <a class="navbar-item" href="admin.html">
-              Exceptions
-            </a>
-            <a class="navbar-item" href="admin.html">
-              Reports
-            </a>
           </div>
         </div>
         <div class="navbar-end">
@@ -66,6 +54,15 @@
 
               <li>
                 <%= link_to "Livros", admin_books_path %>
+              </li>
+            </ul>
+            <p class="menu-label">Aplicação</p>
+            <ul class="menu-list">
+              <li>
+                <%= link_to "Usuários", admin_users_path%>
+              </li>
+              <li>
+                <%= link_to "Administradores", admins_admin_users_path %>
               </li>
             </ul>
           </aside>

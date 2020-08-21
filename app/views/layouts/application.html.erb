@@ -61,13 +61,21 @@
           <% if current_user.admin? %>
             <%= link_to "Área Administrativa", admin_home_index_path, class: "navbar-item" %>
           <% end %>
-        <% end %>
-        <div class="navbar-item">
-          <div class="buttons">
-            <%= link_to "Cadastrar-se", new_user_registration_path, class: "button is-primary" %>
-            <%= link_to "Login", new_user_session_path, class: "button is-light" %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "button is-danger" %>
+            </div>
           </div>
-        </div>
+        <% end %>
+
+        <% unless user_signed_in? %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to "Cadastrar-se", new_user_registration_path, class: "button is-primary" %>
+              <%= link_to "Login", new_user_session_path, class: "button is-light" %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </nav>

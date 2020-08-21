@@ -1,0 +1,9 @@
+<div class="container">
+  <h3 class="title is-3"><%= @user.full_name %></h2>
+  <h5 class="subtitle is-5"><%=  @user.email%></h5>
+  <% if @user.admin? %>
+    <p class="text-light">Administrador</p>
+  <% else %>
+    <p class="text-light">Usuário Comum</p>
+  <% end %>
+</div>

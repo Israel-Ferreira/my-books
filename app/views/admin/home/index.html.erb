@@ -1,2 +1,85 @@
-<h1>Admin::Home#index</h1>
-<p>Find me in app/views/admin/home/index.html.erb</p>
+<section class="hero is-info welcome is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title"><%= t('admin.grettings.welcome', user: current_user.full_name) %></h1>
+    </div>
+  </div>
+</section>
+
+<div class="columns is-multiline admin-card" >
+  <div class="column is-6">
+    <div class="card events-title">
+      <header class="card-header">
+        <p class="card-header-title">Categorias</p>
+      </header>
+      <div class="card-table">
+        <div class="content">
+          <table class="table is-fullwidth is-striped">
+            <tbody>
+              <% @categories.each do |category| %>
+                <tr>
+                  <td><%= category.title  %></td>
+                  <td>
+                    <%= link_to t('admin.common.show'), admin_category_path(category.id), class: "button is-primary" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <%= link_to "Ver mais", admin_categories_path, class: "card-footer-item" %> 
+      </footer>
+    </div>
+  </div>
+  <div class="column is-6">
+    <div class="card events-title">
+      <header class="card-header">
+        <p class="card-header-title">Autores</p>
+      </header>
+      <div class="card-table">
+        <div class="content">
+          <table class="table is-full-width is-striped">
+            <% @authors.each do |author| %>
+              <tr>
+                <td><%= author.author_name %></td>
+                <td><%= link_to t('admin.commons.show'), admin_author_path(author.id), class: "button is-primary" %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <%= link_to "Ver mais", admin_authors_path, class: "card-footer-item" %> 
+      </footer>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card events-title">
+      <header class="card-header">
+        <p class="card-header-title">Livros</p>
+      </header>
+      <div class="card-table">
+        <div class="content">
+          <table class="table is-fullwidth is-striped">
+            <tbody>
+              <% @books.each do |book| %>
+                <tr>
+                  <td><%= book.title %></td>
+                  <td>
+                    <%= link_to t('admin.common.show'), admin_book_path(book.id), class: "button is-primary"%>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <%= link_to "Ver mais", admin_books_path, class: "card-footer-item" %> 
+      </footer>
+    </div>
+  </div>
+</div>

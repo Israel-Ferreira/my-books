@@ -1,5 +1,7 @@
 pt-BR:
   admin:
+    grettings:
+      welcome: "Bem-vindo, %{user}"
     common: 
       show: "Ver"
       delete: "Apagar"
@@ -19,3 +21,7 @@ pt-BR:
       add: "Adicionar livro"
       edit: "Editar livro"
       new: "Novo Livro"
+    users:
+      new: "Novo Usuário"
+      add: "Adicionar Usuário"
+      edit: "Editar Usuário"

@@ -1,5 +1,5 @@
 <%= form_with model: [:admin, @author], local: true do |f| %>
-  <%= render partial: "shared/errors", locals: {resource: @author} %>
+  <%= render partial: "admin/shared/errors", locals: {resource: @author} %>
   <div class="field">
     <%= f.label :author_name, class: "label" %>
     <div class="control">

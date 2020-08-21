@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     get 'home/index'
     resources :authors, :categories, :publishers
     resources :books
+    resources :users do
+      collection do
+        get :admins
+      end
+    end
   end
 
   root to: 'home#index'
