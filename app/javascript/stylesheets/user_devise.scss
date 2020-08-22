@@ -1,0 +1,31 @@
+$shadow_dark: #D9DDE6;
+$background: #FFF;
+$shadow_light: #EFF5FE;
+
+
+body {
+  background-image: url('../images/bookshelf.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.hero-body {
+  justify-content: center;
+}
+
+.login {
+  width: 70vh;
+  border: 1px solid black;
+  background: $background;
+  border-radius: 25px;
+  padding: 1.5rem;
+}
+
+input {
+  background: $shadow_dark;
+}
+
+a {
+  font-weight: 600;
+}

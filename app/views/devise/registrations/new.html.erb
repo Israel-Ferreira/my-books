@@ -1,0 +1,32 @@
+<div class="login">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email %>
+      <div class="control">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-medium is-rounded" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <div class="control">
+        <%= f.password_field :password, autocomplete: "new-password", class: "input is-medium is-rounded" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <div class="control">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-medium is-rounded" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Cadastrar", class: "button is-block is-fullwidth is-primary is-medium is-rounded"  %>
+    </div>
+  <% end %>
+</div>
+
+
